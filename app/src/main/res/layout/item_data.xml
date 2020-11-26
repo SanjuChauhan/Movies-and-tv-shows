@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.my.favourite.movies.model.MovieTitleData" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/img_placeholder" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/iv_image"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{data.title}"
+            android:textAppearance="?attr/textAppearanceListItem"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tv_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/iv_image"
+            android:text="@{`Year ` + data.year}"
+            android:textAppearance="?attr/textAppearanceListItem"
+            tools:text="Year" />
+
+    </RelativeLayout>
+</layout>
